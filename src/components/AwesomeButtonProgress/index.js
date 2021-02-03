@@ -58,7 +58,7 @@ export default class AwesomeButtonProgress extends React.Component {
     };
   }
 
-  UNSAFE_componentWillReceiveProps(newProps) {
+  componentWillUpdate(newProps) {
     this.checkFakePress(newProps);
   }
 
