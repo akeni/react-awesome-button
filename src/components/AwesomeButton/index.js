@@ -80,17 +80,16 @@ export default class AwesomeButton extends React.Component {
             disabled: props.disabled || (props.placeholder && !props.children),
         };
         this.checkProps(props);
+        this.checkPlaceholder = this.checkPlaceholder.bind(this);
+        this.checkProps = this.checkProps.bind(this);
+        this.checkActive = this.checkActive.bind(this);
     }
 
     componentDidMount() {
         this.container = this.button && this.button.parentNode;
     }
 
-    componentDidUpdate(newProps) {
-        this.checkPlaceholder(newProps);
-        this.checkProps(newProps);
-        this.checkActive(newProps);
-    }
+
 
     componentWillUnmount() {
         if (this.clearTimer) {
